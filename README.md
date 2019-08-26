@@ -35,7 +35,7 @@
 
   ### Why?
 
-  This is common Unix best practice, and avoids any prompt misalignment when printing files in a terminal.
+  This is a common Unix best practice, and avoids any prompt misalignment when printing files in a terminal.
 
 ## Quotes
 
