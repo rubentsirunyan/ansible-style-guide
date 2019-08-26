@@ -67,7 +67,7 @@ You should use double quotes when:
 # double quotes w/ nested single quotes
 - name: 'Start all services'
   service:
-    name: '{{ item["name"] }}''
+    name: '{{ item["name"] }}'
     state: 'started'
     enabled: true
   loop: '{{ services }}'
@@ -94,8 +94,8 @@ You should avoid quoting:
 1. booleans (e.g. true/false)
 2. numbers (e.g. 42)
 3. things referencing the local Ansible environemnt e.g.
-  - boolean logic
-  - names of variables we are assigning values to
+    * boolean logic
+    * names of variables we are assigning values to
 
 ```yaml
 # don't quote booleans/numbers
@@ -188,7 +188,7 @@ Use only one space after the colon when designating a key value pair
 - name: 'Create nginx config directory
   file:
     path: '/etc/nginx/conf.d'
-    owner: 'nginx
+    owner: 'nginx'
     group: 'nginx'
     mode: '0755'
     state: 'directory'
@@ -230,7 +230,7 @@ Using `sudo` was deprecated at [Ansible version 1.9.1](https://docs.ansible.com/
 
 #### Play structure
 
-Play should have the following order of declaration:
+A play should have the following order of declaration:
 1. hosts
 2. host options in alphabetical order
 3. pre_tasks (optional)
@@ -266,7 +266,7 @@ Play should have the following order of declaration:
   post_tasks:
     - name: 'Notify everyone'
       mail:
-        subject: 'System {{ ansible_hostname }} has been successfully provisioned.
+        subject: 'System {{ ansible_hostname }} has been successfully provisioned.'
       delegate_to: 'localhost'
 ```
 
